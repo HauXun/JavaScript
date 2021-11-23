@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            id: 1,
+            name: "A",
+            age: 30
+        }
+        let jsonStr = JSON.stringify(person); // chuoi json string
+        console.log(jsonStr);
+        console.log(person);
+
+        let p = JSON.parse(jsonStr);
+        console.log(p.age);
+
+        //array
+        let arrayPerson = [{
+            id: 1,
+            name: 'A'
+        }, {
+            id: 2,
+            name: "B"
+        }];
+        console.log(JSON.stringify(arrayPerson));
+
+        var person2 = person;
+        person2.name = "P2"
+        console.log(person.name);
+
+        //clone - copy
+        person2 = JSON.parse(JSON.stringify(person));
+        console.log(person2)
+        person2.name = "P2";
+        person.name = "A";
+
+        console.log(person2.name);
+        console.log(person.name);
+    </script>
+</body>
+
+</html>
