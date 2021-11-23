@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        
+        .fontStyle {
+            color: green;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="">Home</a>
+    <a href="">Home</a>
+
+    <p>Copyright</p>
+
+    <script>
+        let aList = document.getElementsByTagName("a");
+        for (let i = 0; i < aList.length; i++) {
+            aList[i].style.color = "red";
+            aList[i].style.fontSize = "20px";
+        }
+        let pList = document.getElementsByTagName("p");
+        pList[0].classList = "center fontStyle";
+        pList[0].className = "center fontStyle";
+        pList[0].setAttribute("class", "center fontStyle");
+        // pList[0].setAttribute("class", "center");
+    </script>
+</body>
+
+</html>
