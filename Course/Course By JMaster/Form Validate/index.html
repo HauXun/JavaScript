@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form id="add-user-form">
+            <div>
+                <label for="">Username</label>
+                <input type="text" id="username">
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password" id="password">
+            </div>
+            <div>
+                <label for="">Address</label>
+                <input type="text" id="address">
+            </div>
+            <div>
+                <button type="button" id="submit-btn">Add</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn");
+        let usernameEle = document.getElementById("username");
+        let passwordEle = document.getElementById("password");
+        let addressEle = document.getElementById("address");
+        usernameEle.oninput = function() {
+            usernameEle.style.backgroundColor = "white";
+            usernameEle.style.borderColor = "black";
+            usernameEle.style.color = "black";
+            if (usernameEle.value.length >= 6) {
+                usernameEle.style.backgroundColor = "green";
+                usernameEle.style.borderColor = "green";
+                usernameEle.style.color = "white";
+                if (usernameEle.nextElementSibling) {
+                    usernameEle.parentElement.removeChild(usernameEle.nextElementSibling);
+                }
+            }
+        }
+        submitBtn.onclick = function() {
+            if (usernameEle.value.length < 6) {
+                usernameEle.style.backgroundColor = "red";
+                usernameEle.style.borderColor = "red";
+                let pEle = document.createElement("p");
+                pEle.innerHTML = "Vui long nhap tren 6 ky tu";
+                pEle.style.color = "red";
+                usernameEle.parentElement.appendChild(pEle);
+            }
+        }
+    </script>
+</body>
+
+</html>
