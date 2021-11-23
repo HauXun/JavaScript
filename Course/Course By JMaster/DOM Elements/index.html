@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">HOME</a></li>
+            <li><a href="">HOME</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Copyright JMaster</p>
+    </div>
+    <script>
+        let divHeader = document.getElementById("header");
+        console.log(divHeader);
+        let aList = divHeader.getElementsByTagName("a");
+        console.log("SL the a: " + aList.length);
+        for (let index = 0; index < aList.length; index++) {
+            aList[index].href = "google.com";
+            aList[index].setAttribute("title", "TT");
+
+            console.log(aList[index].href);
+            console.log(aList[index].getAttribute("href"));
+            aList[index].innerHTML = "<b>JMaster</b>";
+            // aList[index].innerText = "<b>JMaster</b>"
+        }
+
+        let divList = document.getElementsByTagName("div");
+        let footerDiv = document.getElementsByClassName("footer");
+        let pList = document.getElementsByTagName("p");
+        let footerDivList = document.querySelectorAll("div.footer");
+        let pFooterList = footerDivList[0].getElementsByTagName("p");
+        footerDivList[0].innerHTML = "JMaster";
+        console.log(footerDivList[0].getAttribute("text"))
+    </script>
+</body>
+
+</html>
