@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="toggle">
+            <i class="fas fa-plus"></i>
+        </div>
+        <li style="--i: 0;">
+            <a href="">
+                <i class="fas fa-home"></i>
+            </a>
+        </li>
+        <li style="--i: 1;">
+            <a href="">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </li>
+        <li style="--i: 2;">
+            <a href="">
+                <i class="fas fa-cog"></i>
+            </a>
+        </li>
+        <li style="--i: 3;">
+            <a href="">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li style="--i: 4;">
+            <a href="">
+                <i class="fas fa-key"></i>
+            </a>
+        </li>
+        <li style="--i: 5;">
+            <a href="">
+                <i class="fas fa-video"></i>
+            </a>
+        </li>
+        <li style="--i: 6;">
+            <a href="">
+                <i class="fas fa-gamepad"></i>
+            </a>
+        </li>
+        <li style="--i: 7;">
+            <a href="">
+                <i class="fas fa-camera"></i>
+            </a>
+        </li>
+    </div>
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+        toggle.onclick = function() {
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
