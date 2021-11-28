@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="top">
+        <a href=""><img src="https://ps.w.org/wpfront-scroll-top/assets/icon.svg?rev=1534312" alt="img"></a>
+    </div>
+    <script>
+        var scroll = document.getElementById('top');
+        window.addEventListener('scroll', function() {
+            scroll.style.transform = 'rotate(' + window.pageYOffset + 'deg)';
+        })
+    </script>
+</body>
+
+</html>
