@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="music">
+        <h2 class="title">Music Name</h2>
+        <div class="player">
+            <audio src=""></audio>
+            <div class="btns">
+                <span class="prev">
+            <ion-icon name="play-back-outline"></ion-icon>
+          </span>
+                <span class="playPause">
+            <ion-icon name="play-outline"></ion-icon>
+          </span>
+                <span class="next">
+            <ion-icon name="play-forward-outline"></ion-icon>
+          </span>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const title = document.querySelector(".title");
+        const prev = document.querySelector(".prev");
+        const playPause = document.querySelector(".playPause");
+        const next = document.querySelector(".next");
+        const audio = document.querySelector("audio");
+
+        // Create song list
+        const songList = [{
+            path: "D:\\Troll Effect Sound\\à thế à.mp3",
+            songName: "à thế à",
+        }, {
+            path: "D:\\Troll Effect Sound\\à thế làm sao mà à.mp3",
+            songName: "à thế làm sao mà à",
+        }, {
+            path: "D:\\Troll Effect Sound\\ae con cặt, tình nghĩa xiaoline.mp3",
+            songName: "ae con cặt, tình nghĩa xiaoline",
+        }, {
+            path: "D:\\Troll Effect Sound\\Anh đừng có bỏ em.mp3",
+            songName: "Anh đừng có bỏ em",
+        }, {
+            path: "D:\\Troll Effect Sound\\anh khoc that roi.mp3",
+            songName: "anh khoc that roi",
+        }];
+
+        // flag on/off
+        let song_Playing = false;
+
+        // play song
+        function playSong() {
+            song_Playing = true;
+            audio.play();
+            playPause.classList.add('active');
+
+            // change icon
+            playPause.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
+        }
+
+        // pause song
+        function pauseSong() {
+            song_Playing = false;
+            audio.pause();
+            playPause.classList.remove('active');
+
+            // change icon
+            playPause.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
+        }
+
+        // play or pause song on click event
+        playPause.addEventListener('click', () => (song_Playing ? pauseSong() : playSong()));
+
+        // load song
+        function loadSong(song) {
+            title.textContent = song.songName;
+            audio.src = song.path;
+        }
+
+        // current song
+        let i = 0;
+
+        // on load - select first song form song list
+        loadSong(songList[i]);
+
+        // previous song
+        function prevSong() {
+            i--;
+            if (i < 0) {
+                // reset to end
+                i = songList.length - 1;
+            }
+            loadSong(songList[i]);
+            playSong();
+        }
+        prev.addEventListener('click', prevSong);
+
+        // next song
+        function nextSong() {
+            i++;
+            if (i > songList.length - 1) {
+                // reset to start
+                i = 0;
+            }
+            loadSong(songList[i]);
+            playSong();
+        }
+        next.addEventListener('click', nextSong);
+    </script>
+</body>
+
+</html>
