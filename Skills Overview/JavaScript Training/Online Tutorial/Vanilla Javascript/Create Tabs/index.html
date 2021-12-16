@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="icon">
+            <div class="iconBx" data-id="content1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Google_logo_%282013-2015%29.svg/1024px-Google_logo_%282013-2015%29.svg.png" alt="">
+            </div>
+            <div class="iconBx" data-id="content2">
+                <img src="https://logodownload.org/wp-content/uploads/2019/09/yahoo-logo.png" alt="">
+            </div>
+            <div class="iconBx" data-id="content3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Twitter_logo.svg/2560px-Twitter_logo.svg.png" alt="">
+            </div>
+            <div class="iconBx" data-id="content4">
+                <img src="https://www.lotempiolaw.com/wp-content/uploads/2018/08/Facebook-PNG-Clipart.png" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <div class="contentBx" id="content1">
+                <div>
+                    <div class="text">
+                        <h2>Google Text</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates maxime qui iste ducimus rem perspiciatis facilis aut molestias, porro nostrum cupiditate amet quidem voluptas error rerum minima modi cum repellat!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx" id="content2">
+                <div>
+                    <div class="text">
+                        <h2>Yahoo Text</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates maxime qui iste ducimus rem perspiciatis facilis aut molestias, porro nostrum cupiditate amet quidem voluptas error rerum minima modi cum repellat!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx" id="content3">
+                <div>
+                    <div class="text">
+                        <h2>Twitter Text</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates maxime qui iste ducimus rem perspiciatis facilis aut molestias, porro nostrum cupiditate amet quidem voluptas error rerum minima modi cum repellat!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx" id="content4">
+                <div>
+                    <div class="text">
+                        <h2>Facebook Text</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates maxime qui iste ducimus rem perspiciatis facilis aut molestias, porro nostrum cupiditate amet quidem voluptas error rerum minima modi cum repellat!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var iconBx = document.querySelectorAll('.iconBx');
+        var contentBx = document.querySelectorAll('.contentBx');
+
+        for (let i = 0; i < iconBx.length; i++) {
+            iconBx[i].addEventListener('mouseover', function() {
+                for (let j = 0; j < contentBx.length; j++) {
+                    contentBx[j].className = 'contentBx';
+                }
+                document.getElementById(this.dataset.id).className = 'contentBx active';
+                for (let k = 0; k < iconBx.length; k++) {
+                    iconBx[k].className = 'iconBx';
+                }
+                this.className = 'iconBx active';
+            })
+        }
+    </script>
+</body>
+
+</html>
