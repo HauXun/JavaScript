@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1639657742894-f77323974ed0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                <h2>Click Again To Close</h2>
+                <div class="content">
+                    <h3>Image Caption One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid, provident velit atque voluptatum aperiam vitae error ut nam blanditiis voluptates fugiat minus quam adipisci officia cumque delectus libero iusto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1639392252601-1f876403458a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <h2>Click Again To Close</h2>
+                <div class="content">
+                    <h3>Image Caption Two</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid, provident velit atque voluptatum aperiam vitae error ut nam blanditiis voluptates fugiat minus quam adipisci officia cumque delectus libero iusto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1639400440317-54a35a504ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIyfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <h2>Click Again To Close</h2>
+                <div class="content">
+                    <h3>Image Caption Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid, provident velit atque voluptatum aperiam vitae error ut nam blanditiis voluptates fugiat minus quam adipisci officia cumque delectus libero iusto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1585406430548-9138265a31ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <h2>Click Again To Close</h2>
+                <div class="content">
+                    <h3>Image Caption Four</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid, provident velit atque voluptatum aperiam vitae error ut nam blanditiis voluptates fugiat minus quam adipisci officia cumque delectus libero iusto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1639186735251-fc810669ffcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <h2>Click Again To Close</h2>
+                <div class="content">
+                    <h3>Image Caption Five</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid, provident velit atque voluptatum aperiam vitae error ut nam blanditiis voluptates fugiat minus quam adipisci officia cumque delectus libero iusto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let imgBx = document.querySelectorAll('.imgBx');
+        imgBx.forEach(popup => popup.addEventListener('click', () => {
+            popup.classList.toggle('active');
+        }))
+    </script>
+</body>
+
+</html>
