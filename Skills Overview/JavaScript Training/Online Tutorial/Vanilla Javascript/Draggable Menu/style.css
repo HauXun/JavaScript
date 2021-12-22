@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #154367;
+    overflow: hidden;
+}
+
+
+/* dùng cho kiểu list container */
+
+#container {
+    position: absolute;
+}
+
+.navigation {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    transition: width .5s, height .75s;
+    transition-delay: 0s, .75s;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.navigation.active {
+    width: 250px;
+    height: 350px;
+    transition: width .5s, height .5s;
+    transition-delay: 0s, .75s;
+}
+
+.navigation .toggle {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ff4081;
+    transition: .5s;
+    border-radius: 4px;
+    transition: border-radius .75s;
+    transition-delay: .65s;
+    cursor: pointer;
+}
+
+.navigation .toggle.active {
+    background-color: #2196f3;
+    transition: border-radius .5s;
+    transition-delay: .65s;
+    border-radius: 4px 4px 0 0;
+}
+
+.navigation .toggle::before {
+    content: '+';
+    position: absolute;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-weight: 400;
+    transition: .5s;
+}
+
+.navigation .toggle.active::before {
+    transform: rotate(315deg);
+}
+
+.navigation ul {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: width .5s, visibility .75s, opacity .75s;
+    transition-delay: 0s, 1s, 1s;
+}
+
+.toggle.active+ul {
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: width .5s, visibility .5s, opacity .5s;
+    transition-delay: 0s, 1s, 1s;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+
+.navigation ul li:hover {
+    background-color: #03a9f4;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    user-select: none;
+    text-decoration: none;
+    color: #154367;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 50px;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 24px;
+    color: #154367;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    line-height: 50px;
+    text-align: start;
+    white-space: nowrap;
+}

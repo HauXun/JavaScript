@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation" id="container">
+        <div class="toggle" id="containerheader"></div>
+        <ul>
+            <li>
+                <a href="">
+                    <span class="icon">
+                      <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon">
+                      <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon">
+                      <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon">
+                      <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon">
+                      <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Password</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon">
+                      <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const navigation = document.querySelector('.navigation');
+        document.querySelector('.toggle').ondblclick = function() {
+            // on double click = ondblclick
+            this.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+    <script>
+        function draggable(element) {
+            var isMouseDown = false;
+
+            // initial mouse X and Y for `mousedown`
+            var mouseX;
+            var mouseY;
+
+            // element X and Y before and after move
+            var elementX = 0;
+            var elementY = 0;
+
+            // mouse button down over the element
+            element.addEventListener('mousedown', onMouseDown);
+
+            function onMouseDown(event) {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+                isMouseDown = true;
+            }
+
+            // mouse button released
+            element.addEventListener('mouseup', onMouseUp);
+
+            function onMouseUp(event) {
+                isMouseDown = false;
+                elementX = parseInt(element.style.left) || 0;
+                elementY = parseInt(element.style.top) || 0;
+            }
+
+            // need to attach to the entire document
+            // in order to take full width and height
+            // this ensures the element keeps up with the mouse
+            document.addEventListener('mousemove', onMouseMove);
+
+            function onMouseMove(event) {
+                if (!isMouseDown) return;
+                var deltaX = event.clientX - mouseX;
+                var deltaY = event.clientY - mouseY;
+                element.style.left = elementX + deltaX + 'px';
+                element.style.top = elementY + deltaY + 'px';
+            }
+        }
+
+        // draggable(document.getElementById('container'));
+
+        //Make the DIV element draggagle:
+        dragElement(document.getElementById("container"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+
+</html>
