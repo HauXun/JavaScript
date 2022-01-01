@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon">
+                          <i class="far fa-home"></i>
+                        </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon">
+                          <i class="far fa-user"></i>
+                        </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon">
+                          <i class="far fa-comment"></i>
+                        </span>
+                    <span class="text">Message</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon">
+                          <i class="fal fa-question"></i>
+                        </span>
+                    <span class="text">Help</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon">
+                          <i class="fa fa-cog"></i>
+                        </span>
+                    <span class="text">Setting</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="toggle">
+        <i class="fas fa-bars open"></i>
+        <i class="fas fa-times close"></i>
+    </div>
+    <script>
+        let menuToggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function() {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        let lists = document.querySelectorAll('.list');
+
+        function setActiveClass() {
+            lists.forEach((list) => {
+                list.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+        lists.forEach((list) =>
+            list.addEventListener('click', setActiveClass));
+    </script>
+</body>
+
+</html>
