@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="">
+                    <span class="icon">
+                          <i class="far fa-home"></i>
+                        </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                          <i class="far fa-user"></i>
+                        </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                          <i class="far fa-comment"></i>
+                        </span>
+                    <span class="text">Message</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                          <i class="fal fa-question"></i>
+                        </span>
+                    <span class="text">Help</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                          <i class="fa fa-cog"></i>
+                        </span>
+                    <span class="text">Setting</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    <script>
+        let lists = document.querySelectorAll('.list');
+
+        function setActiveClass() {
+            lists.forEach((list) => {
+                list.classList.remove('active');
+                this.classList.add('active');
+            });
+        }
+        lists.forEach((list) =>
+            list.addEventListener('mouseover', setActiveClass));
+    </script>
+</body>
+
+</html>
