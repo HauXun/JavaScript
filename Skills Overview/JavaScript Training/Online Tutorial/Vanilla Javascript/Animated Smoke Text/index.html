@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ad distinctio doloremque sequi repellendus, ex vero modi inventore aut deserunt pariatur suscipit iste molestias delectus laboriosam provident! Possimus, nihil voluptas!</p>
+    </section>
+    <script>
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
+
+        // active class on hovered <span> tag
+        const letters = document.querySelectorAll('span');
+        for (let i = 0; i < letters.length; i++) {
+            letters[i].addEventListener('mouseover', function() {
+                letters[i].classList.add('active');
+            })
+        }
+    </script>
+</body>
+
+</html>
