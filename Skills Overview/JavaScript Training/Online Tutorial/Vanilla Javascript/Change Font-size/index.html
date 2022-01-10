@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="buttons">
+            <span class="btn active" onclick="document.getElementById('text').style.fontSize = '1em';">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.25em';">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.75em';">A</span>
+        </div>
+        <div class="content" id="text">
+            <h2>Change Font-size</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, a? Nostrum culpa aut velit, porro odio quas beatae molestias! Tempora numquam ab quae quaerat fugiat doloribus hic ex corrupti dignissimos.</p>
+        </div>
+    </div>
+    <script>
+        let buttons = document.querySelector('.buttons');
+        let btn = buttons.querySelectorAll('.btn');
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].addEventListener('click', function() {
+                let current = buttons.getElementsByClassName('active');
+                current[0].className = current[0].className.replace('active', '');
+                this.className += ' active';
+            });
+        }
+    </script>
+</body>
+
+</html>
