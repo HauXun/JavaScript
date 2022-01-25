@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <h2>Focus</h2>
+        </div>
+        <div class="box">
+            <h2>Focus</h2>
+        </div>
+        <div class="circle"></div>
+    </section>
+    <script>
+        const position = document.documentElement;
+        position.addEventListener('mousemove', e => {
+            position.style.setProperty('--x', e.clientX + 'px');
+            position.style.setProperty('--y', e.clientY + 'px');
+        });
+    </script>
+</body>
+
+</html>
