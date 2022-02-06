@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="thumb">
+            <li>
+                <a href="https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" target="imgBox">
+                    <img src="https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt=""></a>
+            </li>
+            <li>
+                <a href="https://images.unsplash.com/photo-1639364617761-c01ba617a2de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" target="imgBox">
+                    <img src="https://images.unsplash.com/photo-1639364617761-c01ba617a2de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""></a>
+            </li>
+            <li>
+                <a href="https://images.unsplash.com/photo-1639415012762-08e820cc9b23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMzF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" target="imgBox">
+                    <img src="https://images.unsplash.com/photo-1639415012762-08e820cc9b23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMzF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""></a>
+            </li>
+        </ul>
+        <div class="imgBox"><img src="https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt=""></div>
+    </div>
+    <script>
+        document.querySelectorAll('.thumb a').forEach(element => {
+            element.addEventListener('click', (e) => e.preventDefault());
+            element.addEventListener('mouseover', function(e) {
+                document.querySelectorAll('.imgBox img').forEach(item =>
+                    item.setAttribute("src", element.href));
+            })
+        });
+    </script>
+</body>
+
+</html>
