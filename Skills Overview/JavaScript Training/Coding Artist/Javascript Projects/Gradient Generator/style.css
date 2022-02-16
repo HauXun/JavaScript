@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: none;
+    border: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 50px 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.colors {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 45px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 20px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.buttons button {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: 2px solid #d5d5d5;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rotate-icon ion-icon {
+    transform: rotate(45deg);
+}
+
+.buttons .active {
+    background-color: #4a6ee0;
+    color: #fff;
+}
+
+#submit {
+    display: block;
+    background-color: #4a6ee0;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 70px;
+    border-radius: 25px;
+    margin: 0 auto 30px auto;
+    cursor: pointer;
+}
+
+.output {
+    background-color: #f0f2fc;
+}
+
+#code {
+    width: 100%;
+    resize: none;
+    color: #30304a;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+#copy {
+    position: relative;
+    left: 85%;
+    bottom: 10px;
+    font-size: 14px;
+    background-color: #4a6ee0;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}

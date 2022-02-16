@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="colors">
+            <input type="color" id="color-a" value="#1488cc">
+            <input type="color" id="color-b" value="#2b32b2">
+        </div>
+        <div class="buttons">
+            <button onclick="setDirection('to top', this)">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to bottom', this)" class="active">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to right', this)">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to left', this)">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to top right', this)" class="rotate-icon">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to bottom left', this)" class="rotate-icon">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to bottom right', this)" class="rotate-icon">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+            <button onclick="setDirection('to top left', this)" class="rotate-icon">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </button>
+        </div>
+        <button id="submit" onclick="generateCode()">Generate</button>
+        <div class="output">
+            <textarea name="" id="code" rows="2"></textarea>
+            <button id="copy" onclick="copyText()">Copy</button>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let colorOne = document.getElementById('color-a');
+        let colorTwo = document.getElementById('color-b');
+        let outputCode = document.getElementById('code');
+        let currentDirection = 'to bottom';
+
+        function setDirection(value, _this) {
+            let directions = document.querySelectorAll('.buttons button');
+            for (let i of directions) {
+                i.classList.remove('active');
+            }
+            _this.classList.add('active');
+            currentDirection = value;
+        }
+
+        function generateCode() {
+            outputCode.value = `background: linear-gradient(${currentDirection}, ${colorOne.value}, ${colorTwo.value});`;
+
+            document.getElementsByTagName('body')[0].style.backgroundImage = `linear-gradient(${currentDirection}, ${colorOne.value}, ${colorTwo.value})`;
+        }
+
+        function copyText() {
+            outputCode.select();
+            document.execCommand('copy');
+            alert('Gradient Copied');
+        }
+
+        generateCode();
+    </script>
+</body>
+
+</html>
