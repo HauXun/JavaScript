@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="input-text" placeholder="Enter a word to check">
+        <button id="btn">Check</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            let txt = document.getElementById('input-text').value;
+            checkPalindrome(txt);
+        });
+
+        function checkPalindrome(txt) {
+            let txt_new = txt.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            let len = txt_new.length;
+            let halfLen = Math.floor(len / 2);
+            let result = document.getElementById('result');
+
+            for (let i = 0; i < halfLen; i++) {
+                if (txt_new[i] !== txt_new[len - 1 - i]) {
+                    result.textContent = "Nope! Not a Palindrome";
+                    return;
+                }
+                result.textContent = "Yes! It's a Palindrome";
+            }
+        }
+    </script>
+</body>
+
+</html>
