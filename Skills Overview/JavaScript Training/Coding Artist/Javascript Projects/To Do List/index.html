@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="newtask">
+            <input type="text" placeholder="Task to be done...">
+            <button id="push">Add</button>
+        </div>
+        <div id="task"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.querySelector('#push').onclick = function() {
+            if (document.querySelector('#newtask input').value.length == 0) {
+                window.alert("Please enter a task");
+            } else {
+                document.querySelector('#task').innerHTML += `
+              <div class="task">
+                <span id="taskname">
+                  ${document.querySelector('#newtask input').value}
+                </span>
+                <button class="delete">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </button>
+              </div>
+              `;
+
+                var current_tasks = document.querySelectorAll('.delete');
+                for (let i = 0; i < current_tasks.length; i++) {
+                    current_tasks[i].onclick = function() {
+                        this.parentNode.remove();
+                    }
+                }
+
+                var tasks = document.querySelectorAll('.task');
+                for (let i = 0; i < tasks.length; i++) {
+                    tasks[i].onclick = function() {
+                        this.classList.toggle('completed');
+                    }
+                }
+
+                document.querySelector('#newtask input').value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
