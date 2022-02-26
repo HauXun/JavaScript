@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <figure class="image-container">
+            <img src="" alt="" id="chosen-image">
+            <figcaption id="file-name"></figcaption>
+        </figure>
+
+        <input type="file" id="upload-button" accept="image/*">
+        <label for="upload-button">
+          Choose a photo
+        </label>
+    </div>
+    <script>
+        let uploadButton = document.getElementById('upload-button');
+        let chosenImage = document.getElementById('chosen-image');
+        let fileName = document.getElementById('file-name');
+
+        uploadButton.onchange = () => {
+            let reader = new FileReader();
+            reader.readAsDataURL(uploadButton.files[0]);
+            reader.onload = () => {
+                chosenImage.setAttribute("src", reader.result);
+            }
+            fileName.textContent = uploadButton.files[0].name;
+        }
+    </script>
+</body>
+
+</html>

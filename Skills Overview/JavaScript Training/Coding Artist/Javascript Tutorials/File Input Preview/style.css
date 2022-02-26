@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f8ff;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 30px;
+    border-radius: 7px;
+    background-color: #fff;
+    width: 60%;
+    min-width: 450px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, .05);
+}
+
+.image-container {
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+.image-container img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin: auto;
+}
+
+figcaption {
+    margin: 20px 0 30px 0;
+    text-align: center;
+    color: #2a292a;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    position: relative;
+    display: block;
+    background-color: #025bee;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    width: 300px;
+    padding: 18px 0;
+    border-radius: 5px;
+    margin: auto;
+    cursor: pointer;
+}
