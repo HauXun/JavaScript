@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="radio" name="fruit" value="fruit-1" checked> Apple <br>
+        <input type="radio" name="fruit" value="fruit-2"> Orange <br>
+        <input type="radio" name="fruit" value="fruit-3"> Grapes <br>
+        <p id="result">Value of selected radio button:</p>
+    </div>
+    <script>
+        let radioBtns = document.querySelectorAll('input[name="fruit"');
+        let result = document.getElementById('result');
+
+        let findSelected = () => {
+            let selected = document.querySelector('input[name="fruit"]:checked').value;
+            result.textContent = `Value of selected radio button: ${selected}`;
+        }
+
+        radioBtns.forEach(radioBtn => {
+            radioBtn.addEventListener("change", findSelected);
+        });
+
+        findSelected();
+    </script>
+</body>
+
+</html>

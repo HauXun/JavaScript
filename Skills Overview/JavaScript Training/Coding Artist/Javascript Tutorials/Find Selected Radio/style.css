@@ -1,0 +1,22 @@
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #1770ff;
+}
+
+.container p {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+input[type="radio"] {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
