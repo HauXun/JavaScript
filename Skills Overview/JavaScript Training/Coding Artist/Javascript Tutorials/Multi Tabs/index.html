@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabs">
+            <h3 class="active">Tab 1</h3>
+            <h3>Tab 2</h3>
+            <h3>Tab 3</h3>
+        </div>
+        <div class="tab-content">
+            <div class="active">
+                <h4>First Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod at tempore qui quis minima dolore placeat, a debitis maxime possimus rerum, culpa id vero inventore et! Architecto ab odit unde aut! Laboriosam hic, officia illo et iusto facilis at delectus
+                    eaque accusantium architecto labore maiores repellat vitae perferendis minus ea!
+                </p>
+            </div>
+            <div>
+                <h4>Second Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ratione commodi, nulla consectetur nobis expedita beatae odit! Laboriosam adipisci aut ut! Delectus sed ut fugiat labore voluptatem beatae numquam facilis?
+                </p>
+            </div>
+            <div>
+                <h4>Third Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque culpa ex temporibus eveniet magni! Repudiandae, nostrum voluptatem quis beatae fugit sint minus deserunt quas deleniti explicabo. Sed aliquam consectetur odit error suscipit ipsa,
+                    libero officiis quaerat at numquam corporis?
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let tabs = document.querySelectorAll('.tabs h3');
+        let tabContents = document.querySelectorAll('.tab-content div');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabContents.forEach((content) => {
+                    content.classList.remove('active');
+                });
+                tabs.forEach((tab) => {
+                    tab.classList.remove('active');
+                });
+                tabContents[index].classList.add('active');
+                tabs[index].classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
