@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function hello() {
+        //     return new Promise(resolve => {
+        //         resolve("Hello");
+        //     });
+        // }
+
+        async function hello() {
+            // return "Hello";
+            throw "error";
+        }
+
+        hello()
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+
+        async function wait() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    reject("Success");
+                }, 1000);
+            });
+
+            // promise
+            //     .then(response => console.log(response))
+            //     .catch(error => console.log(error));
+
+            try {
+                let response = await promise;
+                console.log(response);
+                return response;
+            } catch (error) {
+                console.log(error);
+            }
+
+            console.log("DONE");
+        }
+
+        async function run() {
+            let data = await wait();
+            console.log(data);
+        }
+        run();
+    </script>
+</body>
+
+</html>
