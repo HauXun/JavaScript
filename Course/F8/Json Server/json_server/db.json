@@ -1,0 +1,14 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "name": "J cung dc",
+      "description": "athea"
+    },
+    {
+      "name": "khong co cung khong sao",
+      "description": "co thi tot",
+      "id": 2
+    }
+  ]
+}
